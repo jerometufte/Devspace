@@ -36,5 +36,7 @@ app.get('/hello', function(req, res){
 	res.render('hello', { title: 'hello' })
 });
 
+// Start server
+
 app.listen(3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

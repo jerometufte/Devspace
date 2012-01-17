@@ -4,6 +4,7 @@
   , "private": true
   , "dependencies": {
       "express": "2.5.2"
-    , "jade": ">= 0.0.1"
+    , "hbs": ">= 1.0.0"
+    , "handlebars": ">= 1.0.0"    
   }
 }
