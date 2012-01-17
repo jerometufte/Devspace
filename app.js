@@ -35,6 +35,12 @@ app.get('/', function(req, res){
 app.get('/test', function(req, res){
 	res.render('test', { title: 'test' })
 });
+app.get('/pageable', function(req, res){
+	res.render('pageable', { title: 'pageable' })
+});
+app.get('/peelable', function(req, res){
+	res.render('peelable', { title: 'peelable' })
+});
 
 // Start server
 

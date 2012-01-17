@@ -1,0 +1,155 @@
+
+/* Demo related-CSS */
+
+body {
+	margin: 0;
+	padding: 0;
+	-webkit-user-select: none;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+p { margin: 0; padding: 10px; }
+
+#container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	overflow: hidden; /*so that the peel img wont appear out of the container*/
+}
+
+#top {
+	position: absolute; /* this needed to be set for z-index to work */
+	width: 100%;
+	height: 100%;
+	background: rgb(200,200,200);
+
+	z-index: 1;
+}
+
+.bottom {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+
+	background: rgb(55,55,55);
+}
+
+.bottom p {
+	position: absolute;
+	top: 50px;
+	width: 200px;
+	color: white;
+}
+
+#peel-upper {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#peel-upper #view-desktop {
+	background-image: url(/images/desktop-version.jpg);
+	width: 500px;
+	height: 53px;
+}
+
+#peel-lower {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+#peel-lower #get-your-own {
+	background-image: url(/images/get-your-own.jpg);
+	width: 500px;
+	height: 47px;
+}
+
+#peel-lower #explore-more {
+	background-image: url(/images/explore-more.jpg);
+	width: 500px;
+	height: 53px;
+}
+
+#peel-lower #twitter {
+	background-image: url(/images/twitter.jpg);
+	width: 500px;
+	height: 47px;
+}
+
+#peel-lower #facebook {
+	background-image: url(/images/facebook.jpg);
+	width: 500px;
+	height: 48px;
+}
+
+#peel-lower #powered-by-onswipe {
+	background-image: url(/images/powered-by-onswipe.jpg);
+	width: 500px;
+	height: 51px;
+}
+
+#under #content p {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	margin: 0;
+}
+
+
+
+button {
+	font-size: 18px;
+}
+
+/* Old demo */
+
+#peelable-demo {
+	position: relative; /* this needed to be set for z-index to work */
+	width: 100%;
+	height: 100%;
+	background: rgb(200,200,200);
+
+	z-index: 1;
+}
+
+#corner {
+	/*pointer-events: none;*/
+}
+
+/* Peelable-related CSS */
+
+#peel {
+	position: absolute;
+	left: 0; /*align to the right of the parent element*/
+	bottom: -1000px; /*align in a way to cover the whole parent element; +ve moves the el downwards, -ve moves the el upwards*/
+	width: 1000px; /*big enough to cover the whole parent element*/
+	height: 2000px; /*big enough to cover the whole parent element*/
+	-webkit-transform-origin: 0 50%;
+	z-index: 99;
+}
+#peel img {
+	position: absolute;
+	left: -1px; /* offset by one pixel to hide the white artifacts caused by the #peel element */
+	-webkit-transform-origin: 0 100%;
+	-webkit-user-drag: none;
+}
+#under {
+	position: absolute;
+	left: -1000px; /*negation of the width of the #peel element so that it align to the right of it; +ve value will move the el to the left, and -ve value will move the el to the right*/
+	bottom: -1000px; /*align in a way to cover the whole parent element, same as #peel*/
+	overflow: hidden;
+	width: 1000px; /*big enough to cover the whole parent element, same as #peel*/
+	height: 2000px; /*big enough to cover the whole parent element, same as #peel*/
+	-webkit-transform-origin: 100% 50%;
+	z-index: 99;
+}
+
+#under #content {
+	position: absolute;
+	-webkit-transform-origin: 0% 100%;
+}
