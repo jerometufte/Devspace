@@ -32,8 +32,8 @@ app.configure('production', function(){
 app.get('/', function(req, res){
 	res.render('index', { title: 'Express' })
 });
-app.get('/hello', function(req, res){
-	res.render('hello', { title: 'hello' })
+app.get('/test', function(req, res){
+	res.render('test', { title: 'test' })
 });
 
 // Start server
