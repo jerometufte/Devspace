@@ -41,7 +41,9 @@ app.get('/pageable', function(req, res){
 app.get('/peelable', function(req, res){
 	res.render('peelable', { title: 'peelable' })
 });
-
+app.get('/bubbles', function(req, res){
+	res.render('bubbles', { title: 'bubbles' })
+});
 // Start server
 
 var port = process.env.PORT || 3000;
