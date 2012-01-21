@@ -28,7 +28,7 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', function(req, res){
-	res.render('index', { title: 'Express' })
+	res.render('index', { title: 'index' })
 });
 app.get('/:page', function(req, res){
 	var path = req.param('page')

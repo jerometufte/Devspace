@@ -1,0 +1,105 @@
+body, html {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	position: relative;
+	float: left;
+	font-size: 60px;
+	font-family: helvetica neue;
+	margin: 60px 0 60px 80px;
+	padding: 0;
+}
+h2 {
+	position: relative;
+	float: left;
+	font-size: 20px;
+	font-family: helvetica neue;
+	vertical-align: baseline;
+	margin: 100px 0 0 20px;
+	padding: 0;
+}
+#position {
+	position: absolute;
+  right: 20px;
+  top: 20px;
+}
+#container {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+#radial-menu {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 100px;
+    left: 150px;
+    display: block;
+    width: 200px;
+    height: 200px;
+    color: white;
+    overflow: hidden;
+}
+#radial-menu ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    height: 200px;
+    width: 200px;
+    z-index: 200;
+}
+#radial-menu ul li {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    float: left;
+    font-family: helvetica neue, helvetica;
+    font-size: 20px;
+    color: #777;
+}
+#radial-menu ul li:first-child {
+    background-color: rgba(0, 100, 0, .1);
+    border-top-left-radius: 100px;
+}
+#radial-menu ul li:first-child span {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+#radial-menu ul li:nth-child(2) {
+    background-color: rgba(0, 0, 0, .1);
+    border-top-right-radius: 100px;
+}
+#radial-menu ul li:nth-child(2)  span {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+#radial-menu ul li:nth-child(3) {
+    background-color: rgba(50, 0, 150, .1);
+    border-bottom-left-radius: 100px;
+}
+#radial-menu ul li:nth-child(3)  span {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+#radial-menu ul li:nth-child(4) {
+    background-color: rgba(100, 0, 0, .1);
+    border-bottom-right-radius: 100px;
+}
+#radial-menu ul li:nth-child(4)  span {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
