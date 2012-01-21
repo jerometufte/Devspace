@@ -4,7 +4,7 @@
  */
 
 var express = require('express');
-
+var fs = require('fs');
 var app = module.exports = express.createServer();
 
 // Configuration
@@ -13,8 +13,6 @@ app.configure(function(){
   app.set('views', __dirname + '/views');
 	app.set("view engine", "hbs");
 	app.set("view options", {layout: false});
-  // app.use(express.bodyParser());
-  // app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
 });
@@ -32,14 +30,15 @@ app.configure('production', function(){
 app.get('/', function(req, res){
 	res.render('index', { title: 'Express' })
 });
-app.get('/test', function(req, res){
-	res.render('test', { title: 'test' })
-});
-app.get('/pageable', function(req, res){
-	res.render('pageable', { title: 'pageable' })
-});
-app.get('/peelable', function(req, res){
-	res.render('peelable', { title: 'peelable' })
+app.get('/:page', function(req, res){
+	var path = req.param('page')
+	fs.stat('./views/' + path + '.hbs', function(err, stat){
+		if (err) {
+			res.render('404', { title: 'Page Not Found'})
+		} else {
+			res.render(req.param('page'), { title: req.param('page') })
+		}
+	});
 });
 
 // Start server
