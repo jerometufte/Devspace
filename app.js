@@ -40,7 +40,9 @@ app.get('/:page', function(req, res){
 		}
 	});
 });
-
+app.get('/bubbles', function(req, res){
+	res.render('bubbles', { title: 'bubbles' })
+});
 // Start server
 
 var port = process.env.PORT || 3000;
