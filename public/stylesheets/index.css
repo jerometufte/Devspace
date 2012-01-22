@@ -1,6 +1,18 @@
 body, html {
 	margin: 0;
 	padding: 0;
+	font-family: helvetica neue;
+}
+header {
+	background-color: #7AC977;
+	color: white;
+	width: auto;
+	height: 20px;
+	font-size: 16px;
+	padding: 2px 5px;
+	position: absolute;
+	top: 0;
+	left: 80px;
 }
 h1 {
 	position: relative;
@@ -14,7 +26,6 @@ h2 {
 	position: relative;
 	float: left;
 	font-size: 20px;
-	font-family: helvetica neue;
 	vertical-align: baseline;
 	margin: 100px 0 0 20px;
 	padding: 0;

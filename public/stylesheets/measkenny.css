@@ -1,13 +1,39 @@
 body, html {
 	margin: 0;
 	padding: 0;
+	font-family: helvetica neue;
+}
+header {
+	background-color: #7AC977;
+	color: white;
+	width: auto;
+	height: 20px;
+	font-size: 16px;
+	padding: 2px 5px;
+	position: absolute;
+	top: 0;
+	left: 80px;
 }
 h1 {
+	position: relative;
+	float: left;
 	font-size: 60px;
-	font-family: helvetica Neue;
-	margin: 60px 80px;
+	font-family: helvetica neue;
+	margin: 60px 0 60px 80px;
+	padding: 0;
+}
+h2 {
+	position: relative;
+	float: left;
+	font-size: 20px;
+	vertical-align: baseline;
+	margin: 100px 0 0 20px;
 	padding: 0;
 }
 img {
-	margin: 0 100px;
+	position: absolute;
+	display: block;
+	top: 140px;
+	width: 400px;
+	margin: 40px 0 0 80px;
 }
