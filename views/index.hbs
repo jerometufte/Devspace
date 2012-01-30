@@ -7,14 +7,35 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <title>{{title}}</title>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="/javascripts/{{title}}.js"></script>
-<link rel="stylesheet" type="text/css" href="/stylesheets/{{title}}.css"/>
+<link rel="stylesheet" type="text/css" href="/stylesheets/reset.css"/>
+<link rel="stylesheet" type="text/css" href="/stylesheets/index.css"/>
 </head>
 
 <body>
   <header>dev.jerometufte.me</header>
   <h1>dev space!</h1>
-  <h2></h2>
+  <ul>
+    <li>bubbles</li>
+    <li>ios4-scroll</li>
+    <li>ios4-scroll2</li>
+    <li>iphone-radial</li>
+    <li>iphone-test</li>
+    <li>measkenny</li>
+    <li>pageable</li>
+    <li>peelable</li>
+    <li>radial-menu</li>
+    <li>sliding-menu</li>
+  </ul>
 </body>
+
+<script>
+  $(document).ready(function(){
+    $('li').on('click', function(){
+      var project = $(this).html();
+      var URL = 'http://dev.jerometufte.me/' + project
+      window.open(project);
+    });
+  });
+</script>
 
 </html>

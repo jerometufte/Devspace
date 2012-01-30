@@ -28,11 +28,11 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', function(req, res){
-	res.render('index', { title: 'index' })
+ res.render('index', { title: 'index' })
 });
 app.get('/:page', function(req, res){
-	var path = req.param('page')
-	fs.stat('./views/' + path + '.hbs', function(err, stat){
+ var path = req.param('page')
+ fs.stat('./views/' + path + '.hbs', function(err, stat){
 		if (err) {
 			res.render('404', { title: 'Page Not Found'})
 		} else {
