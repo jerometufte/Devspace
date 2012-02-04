@@ -35,10 +35,12 @@
   
       placementX = e.touches[0].pageX
       placementY = e.touches[0].pageY
-   
-      $('#container').append(radialHTML);
-      $('#radial-menu').css('top', placementY - $('#container').offset().left - 100 + 'px');
-      $('#radial-menu').css('left', placementX  - $('#container').offset().left - 100 + 'px');
+  
+      // commenting out the radial visual for now
+      //
+      // $('#container').append(radialHTML);
+      // $('#radial-menu').css('top', placementY - $('#container').offset().left - 100 + 'px');
+      // $('#radial-menu').css('left', placementX  - $('#container').offset().left - 100 + 'px');
     });
 
     container.addEventListener("touchmove", function(e) {
@@ -58,9 +60,9 @@
     container.addEventListener("touchend", function(e) {     
       $('#radial-menu').remove();
       if (_this.showPass(passArray) == true){
-        $('#truthiness').html('YOU DID IT');
+        $('#truthiness').html('YOU DID IT !!!!!!!!!!');
       } else {
-        $('#truthiness').html('NICE TRY');
+        $('#truthiness').html('NICE TRY :\( :\( :\(');
       }
     });
   };
@@ -84,10 +86,8 @@
     console.log(password);
     console.log(yesPass);
     if (password.length != yesPass.length) { return false; }
-    var a = password.sort(),
-        b = yesPass.sort();
     for (var i = 0; password[i]; i++) {
-      if (a[i] !== b[i]) {
+      if (password[i] !== yesPass[i]) {
         return false;
       }
     }
