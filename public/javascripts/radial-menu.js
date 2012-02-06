@@ -72,9 +72,9 @@
       container.addEventListener(gesture.move, followMove, false);
       // commenting out the radial visual for now
       
-      $('#container').append(radialHTML);
-      $('#radial-menu').css('top', placementY - $('#container').offset().left - 100 + 'px');
-      $('#radial-menu').css('left', placementX  - $('#container').offset().left - 100 + 'px');
+      // $('#container').append(radialHTML);
+      // $('#radial-menu').css('top', placementY - $('#container').offset().left - 100 + 'px');
+      // $('#radial-menu').css('left', placementX  - $('#container').offset().left - 100 + 'px');
     });
 
     followMove = function(e){
