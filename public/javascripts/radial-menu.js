@@ -11,6 +11,31 @@
   var passArray
   var prevChoice
   var newChoice
+  var gestureHappening = false
+  
+  var hastouch = (function() {
+    if ('createTouch' in document) return true;
+    try {
+      document.createEvent('TouchEvent').initTouchEvent != null;
+      return true;
+    } catch (error) {
+      return false;
+    }
+  })();
+  /*
+  		# Maps events to the appropriate user agent touch or mouse events.
+  		# Used to handle event listeners.
+  */
+  var gesture = {
+    start: hastouch ? 'touchstart' : 'mousedown',
+    move: hastouch ? 'touchmove' : 'mousemove',
+    end: hastouch ? 'touchend' : 'mouseup',
+    cancel: 'touchcancel'
+  };
+  
+  // document.addEventListener(gesture.start, function(){
+  //   alert('start!');
+  // });
 
   RadialMenuController = function(){ return this; }
     
@@ -18,7 +43,9 @@
       var _this = this
       var container = document.getElementById('container');
   
-    container.addEventListener("touchstart", function(e) {
+    container.addEventListener(gesture.start, function(e) {
+      console.log('gesture start');
+      gestureHappening = true
 
       if ($('#radial-menu').length > 0) {
         e.stopPropagation();
@@ -33,20 +60,33 @@
       passArray = []
       prevChoice = 0
   
-      placementX = e.touches[0].pageX
-      placementY = e.touches[0].pageY
-  
+      if (hastouch) {
+        placementX = e.touches[0].pageX;
+        placementY = e.touches[0].pageY;
+      } else {
+        placementX = e.pageX;
+        placementY = e.pageY;
+      };
+      console.log('x = ' + placementX + ' and y = ' + placementY);
+
+      container.addEventListener(gesture.move, followMove, false);
       // commenting out the radial visual for now
-      //
-      // $('#container').append(radialHTML);
-      // $('#radial-menu').css('top', placementY - $('#container').offset().left - 100 + 'px');
-      // $('#radial-menu').css('left', placementX  - $('#container').offset().left - 100 + 'px');
+      
+      $('#container').append(radialHTML);
+      $('#radial-menu').css('top', placementY - $('#container').offset().left - 100 + 'px');
+      $('#radial-menu').css('left', placementX  - $('#container').offset().left - 100 + 'px');
     });
 
-    container.addEventListener("touchmove", function(e) {
+    followMove = function(e){
+      if (!hastouch && !gestureHappening) { return false };
       e.preventDefault();
-      curX = e.touches[0].pageX
-      curY = e.touches[0].pageY 
+      if (hastouch){
+        curX = e.touches[0].pageX
+        curY = e.touches[0].pageY 
+      } else {
+        curX = e.pageX
+        curY = e.pageY       
+      };
       deltaX = curX - placementX
       deltaY = curY - placementY
       newChoice = _this.handleChoice(deltaX, deltaY)
@@ -55,15 +95,19 @@
           passArray.push(newChoice)
           prevChoice = newChoice
         }
-    });
-
-    container.addEventListener("touchend", function(e) {     
+    };
+    
+    container.addEventListener(gesture.end, function(e) {
+      console.log("gesture end");     
       $('#radial-menu').remove();
       if (_this.showPass(passArray) == true){
-        $('#truthiness').html('YOU DID IT !!!!!!!!!!');
+        $('#truthiness').removeClass('wrongPass').html('That\'s Correct.');
       } else {
-        $('#truthiness').html('NICE TRY :\( :\( :\(');
-      }
+        $('#truthiness').html('&#3232_&#3232').addClass('wrongPass');
+      };
+    
+      container.removeEventListener(gesture.move, followMove, false);
+      gestureIsHappening = false
     });
   };
 
