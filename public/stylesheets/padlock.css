@@ -1,0 +1,145 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: helvetica neue;
+}
+header {
+  background-color: #7AC977;
+  color: white;
+  width: auto;
+  height: 20px;
+  font-size: 16px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 0;
+  left: 80px;
+}
+h1 {
+  position: relative;
+  float: left;
+  font-size: 60px;
+  font-family: helvetica neue;
+  margin: 60px 0 60px 80px;
+  padding: 0;
+}
+h2 {
+  position: relative;
+  float: left;
+  font-size: 20px;
+  vertical-align: baseline;
+  margin: 100px 0 0 20px;
+  padding: 0;
+}
+#setPassword {
+	z-index: 2;
+	position: relative;
+	display: block;
+	height: 40px;
+	width: 100px;
+	background-color: #7AC977;
+	color: white;
+	float: left;
+  margin: 60px 0 60px 80px;
+}
+#truthiness {
+  position: absolute;
+  right: 50%;
+  margin-right: -100px;
+  top: 50%;
+  font-size: 36px;
+  font-weight: bold;
+  width: 200px;
+  text-align: center;
+  color: #7AC977; 
+}
+#truthiness.wrongPass {
+  color: #FF0000;
+}
+#container {
+  position: absolute;
+	z-index: 1;
+  left: 20px;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+#radial-menu {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 100px;
+  left: 150px;
+  display: block;
+  width: 200px;
+  height: 200px;
+  color: white;
+  overflow: hidden;
+}
+#radial-menu ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  height: 200px;
+  width: 200px;
+  z-index: 200;
+}
+li.radial {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    float: left;
+    font-family: helvetica neue, helvetica;
+    font-size: 20px;
+    color: white;
+}
+li.radial:first-child {
+    border-top-left-radius: 100px;
+}
+#radial1.hot {
+    background-color: rgba(0, 100, 0, .1);	
+}
+li.radial:first-child span {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+li.radial:nth-child(2) {
+    border-top-right-radius: 100px;
+}
+#radial2.hot {
+    background-color: rgba(0, 0, 0, .1);
+}
+li.radial:nth-child(2)  span {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+li.radial:nth-child(3) {
+    border-bottom-left-radius: 100px;
+}
+#radial3.hot {
+    background-color: rgba(50, 0, 150, .1);
+}
+li.radial:nth-child(3)  span {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+li.radial:nth-child(4) {
+    border-bottom-right-radius: 100px;
+}
+#radial4.hot {
+    background-color: rgba(100, 0, 0, .1);
+}
+li.radial:nth-child(4)  span {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
